@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    inputphysics = prompt("Nhập điểm môn lý");
+    inputchemistry = prompt("Nhập điểm môn hóa");
+    inputbiology = prompt("Nhập điểm môn sinh");
+
+    const physics = Number(inputphysics);
+    const chemistry = Number(inputchemistry);
+    const biology = Number(inputbiology);
+
+    let sum = physics + chemistry + biology;
+    let average = (physics + chemistry + biology) / 3;
+    
+    document.write("Điểm tổng các môn: " + sum);
+    document.write("Điểm trung bình: " + average);
+    document.write(" <br/>");
+</script>
+
+</html>
