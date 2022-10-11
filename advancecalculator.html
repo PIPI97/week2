@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caculator</title>
+</head>
+<style>
+    table {
+        width: 500px;
+        height: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 50px;
+    }
+
+    body>div {
+        width:600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="6">Caculator</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="height: 50px;">
+                    <td colspan="2"><input type="number" id="num1" style="width: 180px;"></td>
+                    <td style="width: 100px;">
+                        <p id="symbol" style="text-align: center;"></p>
+                    </td>
+                    <td colspan="2"><input type="number" id="num2" style="width: 180px;"></td>
+                    <td>
+                        <p id="rs"></p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="margin-left:20%;">
+            <td><input id="add" type="submit" value="+"></td>
+            <td><input id="sub" type="submit" value="-"></td>
+            <td><input id="equal" type="submit" value="="></td>
+        </table>
+    </div>
+</body>
+<script>
+
+    let add = document.getElementById("add");
+    let sub = document.getElementById("sub");
+    let symbol = document.getElementById("symbol");
+    let result = document.getElementById("rs");
+    let equal = document.getElementById("equal");
+    add.onclick = function (event) {
+        symbol.innerText = event.target.value;
+    }
+    sub.onclick = function (event) {
+        symbol.innerText = event.target.value;
+    }
+    equal.onclick = function () {
+        let num1 = document.getElementById("num1").value; let rsnum1;
+        let num2 = document.getElementById("num2").value; let rsnum2;
+        rsnum1 = Number(num1)
+        rsnum2 = Number(num2)
+        if (symbol.innerText == "+") {
+            result.innerText = rsnum1 + rsnum2;
+        }
+        else {
+            result.innerText = rsnum1 - rsnum2;
+        }
+    }
+</script>
+
+</html>
