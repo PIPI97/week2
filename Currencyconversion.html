@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Amount</th>
+                <th>From Currency</th>
+                <th>To Currency</th>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="text" id="value"></td>
+                <td>
+                    <select name="From" id="Fr">
+                        <option value="vnd">VND</option>
+                        <option value="usd">USD</option>
+
+                    </select>
+                </td>
+                <td>
+                    <select name="To" id="T">
+                        <option value="vnd">VND</option>
+                        <option value="usd">USD</option>
+
+                    </select>
+
+                </td>
+                <td>
+                    <button onclick="convert()">Convert</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <p id="rs"></p>
+</body>
+<script>
+    function convert() {
+        let Result;
+        let Amount = document.getElementById("value").value;
+        let FromC = document.getElementById("Fr").value;
+        let ToC = document.getElementById("T").value;
+        console.log(Amount,FromC, ToC);
+        if (FromC == "vnd" && ToC == "usd") {
+            Result = " result : " + (Amount / 23000) + " USD";
+        }
+        else if (FromC == "usd" && ToC == "vnd") {
+            Result = " result : " + (Amount * 23000) + " VND";
+        }
+        else if (FromC == "vnd") {
+            Result = "result : " + Amount + " VND";
+        }
+        else {
+            Result = "result : " + Amount + " USD";
+        }
+    
+    document.getElementById("rs").innerHTML = Result;
+}
+</script>
+
+</html>
